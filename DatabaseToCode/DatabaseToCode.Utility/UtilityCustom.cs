@@ -4,6 +4,7 @@ using System.Linq;
 using System.Data.SqlClient;
 using FastMember;
 using Microsoft.AspNetCore.Mvc.Filters;
+using DatabaseToCode.Model.TablesController;
 
 namespace DatabaseToCode.Utility
 {
@@ -72,6 +73,24 @@ namespace DatabaseToCode.Utility
         }
 
         //var t = UtilityCustom.ConvertReaderToObject<LotserialinventoryModel>(reader);
+
+        public static List<TableColumn> TableColumnsFromReader(SqlDataReader rd)
+        {
+            List<TableColumn> rt = new List<TableColumn>();
+
+            for (int i = 0; i < rd.FieldCount; i++)
+            {
+                var col = new TableColumn();
+                col.ColumnName = rd.GetName(i);
+                col.DataType = rd.GetDataTypeName(i).ToString();
+                col.OrdinalPosition = i;
+                col.IsNullable = "NO";
+                col.ColumnDefault = null;
+                rt.Add(col);
+            }
+
+            return rt;
+        }
     }
 }
 

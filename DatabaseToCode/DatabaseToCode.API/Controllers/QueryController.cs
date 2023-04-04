@@ -15,6 +15,8 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Newtonsoft.Json;
 using DatabaseToCode.Manager.Interface;
+using DatabaseToCode.Manager.Impl;
+using DatabaseToCode.Model.QueryController;
 
 namespace DatabaseToCode.API.Controllers
 {
@@ -38,6 +40,20 @@ namespace DatabaseToCode.API.Controllers
             HttpContextAccessor = httpContextAccessor;
             CommonFunctions = new CommonFunctions(configuration, httpContextAccessor);
             QueryManager = queryManager;
+        }
+
+        [HttpPost]
+        [Route("/api/Query/GetModel/")]
+        public ActionResult GetQueryModel([FromBody] GetQueryModelParams model)
+        {
+            try
+            {
+                return Ok(QueryManager.GetQueryModel(model.Query, model.ClassName, model.Language));
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new APIResponse(ResponseCode.ERROR, "Exception", ex.Message));
+            }
         }
     }
 }

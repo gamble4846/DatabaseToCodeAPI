@@ -8,7 +8,7 @@ namespace DatabaseToCode.Manager.Interface
 {
     public interface IQueryManager
     {
-        
+        APIResponse GetQueryModel(string Query, string ClassName, string Language);
     }
 }
 

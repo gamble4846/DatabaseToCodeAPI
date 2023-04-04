@@ -71,6 +71,7 @@ namespace DatabaseToCode.API
 
             #region Dependency
             services.AddTransient<ITablesManager, TablesManager>();
+            services.AddTransient<IQueryManager, QueryManager>();
             #endregion
 
         }

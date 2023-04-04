@@ -18,6 +18,19 @@ namespace DatabaseToCode.DataAccess.SQLServer.Impl
             MSSqlDatabase = msSqlDatabase;
             CommonFunctions = commonFunctions;
         }
+
+        public List<TableColumn> GetColumnsFromQuery(string Query)
+        {
+            var ret = new List<TableColumn>();
+            var cmd = this.MSSqlDatabase.Connection.CreateCommand() as SqlCommand;
+            cmd.CommandText = Query;
+
+            using (var reader = cmd.ExecuteReader())
+            {
+                ret = UtilityCustom.TableColumnsFromReader(reader);
+            }
+            return ret;
+        }
     }
 }
 

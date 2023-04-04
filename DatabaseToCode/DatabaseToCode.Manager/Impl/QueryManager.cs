@@ -36,7 +36,43 @@ namespace DatabaseToCode.Manager.Impl
             ServerType = TokenData.Servers.Find(x => x.IsSelected).DatabaseType;
         }
 
-        
+        public APIResponse GetQueryModel(string Query, string ClassName, string Language)
+        {
+            List<TableColumn> ColumnsData;
+            switch (ServerType)
+            {
+                case "SQLServer":
+                    MsSqlDatabase = new MSSqlDatabase(ConnectionString);
+                    SQLQueryDataAccess = new DatabaseToCode.DataAccess.SQLServer.Impl.QueryDataAccess(MsSqlDatabase, CommonFunctions);
+
+                    ColumnsData = SQLQueryDataAccess.GetColumnsFromQuery(Query);
+                    if (ColumnsData == null || ColumnsData.Count < 0)
+                    {
+                        return new APIResponse(ResponseCode.ERROR, "No Records Found");
+                    }
+                    break;
+                default:
+                    return new APIResponse(ResponseCode.ERROR, "Invalid Database Type", ServerType);
+            }
+
+            switch (Language)
+            {
+                case "CSharp":
+                    string FinalModel = "public class " + ClassName + "</br>{</br>";
+
+                    foreach (var column in ColumnsData)
+                    {
+                        string currentColumn = "&nbsp&nbsp&nbsp&nbsp&nbsp public " + CommonFunctions.GetDataTypeFor(column, "CSharpDataType") + " " + column.ColumnName + " { get; set; } " + CommonFunctions.GetDefaultDataFor(column, "CSharpDataType") + "</br>";
+                        FinalModel += currentColumn;
+                    }
+
+                    FinalModel += "}</br>";
+
+                    return new APIResponse(ResponseCode.SUCCESS, "Model Created", FinalModel);
+                default:
+                    return new APIResponse(ResponseCode.ERROR, "Invalid Language", ServerType);
+            }
+        }
     }
 }
 
