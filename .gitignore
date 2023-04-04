@@ -1,0 +1,11 @@
+/DatabaseToCode/.vs
+/DatabaseToCode/DatabaseToCode.API/bin
+/DatabaseToCode/DatabaseToCode.API/obj
+/DatabaseToCode/DatabaseToCode.DataAccess/bin
+/DatabaseToCode/DatabaseToCode.DataAccess/obj
+/DatabaseToCode/DatabaseToCode.Manager/bin
+/DatabaseToCode/DatabaseToCode.Manager/obj
+/DatabaseToCode/DatabaseToCode.Model/bin
+/DatabaseToCode/DatabaseToCode.Model/obj
+/DatabaseToCode/DatabaseToCode.Utility/bin
+/DatabaseToCode/DatabaseToCode.Utility/obj
