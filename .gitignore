@@ -9,3 +9,5 @@
 /DatabaseToCode/DatabaseToCode.Model/obj
 /DatabaseToCode/DatabaseToCode.Utility/bin
 /DatabaseToCode/DatabaseToCode.Utility/obj
+/DatabaseToCode/DatabaseToCode.DataAccess.SQLServer/bin
+/DatabaseToCode/DatabaseToCode.DataAccess.SQLServer/obj

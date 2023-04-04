@@ -9,7 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using DatabaseToCode.Utility;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Hosting;
-
+using DatabaseToCode.Manager.Impl;
+using DatabaseToCode.Manager.Interface;
 
 namespace DatabaseToCode.API
 {
@@ -68,9 +69,10 @@ namespace DatabaseToCode.API
             services.AddTransient<ICurrentUserService, CurrentUserService>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
-			#region Dependency
-			#endregion
-            
+            #region Dependency
+            services.AddTransient<ITablesManager, TablesManager>();
+            #endregion
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

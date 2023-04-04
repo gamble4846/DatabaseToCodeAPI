@@ -10,13 +10,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\DatabaseToCode.DataAccess.SQLServer\DatabaseToCode.DataAccess.SQLServer.csproj" />
     <ProjectReference Include="..\DatabaseToCode.DataAccess\DatabaseToCode.DataAccess.csproj" />
     <ProjectReference Include="..\DatabaseToCode.Model\DatabaseToCode.Model.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Impl\" />
-    <Folder Include="Interface\" />
   </ItemGroup>
 
 </Project>
