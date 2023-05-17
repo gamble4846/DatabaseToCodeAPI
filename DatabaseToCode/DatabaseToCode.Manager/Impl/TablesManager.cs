@@ -102,7 +102,7 @@ namespace DatabaseToCode.Manager.Impl
             switch (Language)
             {
                 case "CSharp":
-                    string FinalModel = "public class " + TableName + "</br>{</br>";
+                    string FinalModel = "[Table(&#34;" + TableName + "&#34;)]</br>public class " + TableName + "Model</br>{</br>";
 
                     foreach (var column in ColumnsData)
                     {
