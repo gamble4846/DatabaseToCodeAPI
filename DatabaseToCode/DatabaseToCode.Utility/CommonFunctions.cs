@@ -168,7 +168,7 @@ namespace DatabaseToCode.Utility
                             }
                             else
                             {
-                                TOReturnDefault += Column.ColumnDefault;
+                                TOReturnDefault += Column.ColumnDefault + ";";
                             }
                         }
                         
