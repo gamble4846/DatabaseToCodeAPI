@@ -1,0 +1,8 @@
+version: "3.3"
+services:
+  DatabaseToCode:
+    image: DatabaseToCode4846
+    volumes:
+      - D:\DockerVolumes\KeyLogger\RecieveAPI\Images:/app/Images
+    ports:
+      - 8911:80
