@@ -11,7 +11,7 @@
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <ShowAllFiles>true</ShowAllFiles>
-    <NameOfLastUsedPublishProfile>D:\Git Projects\Rohan%27s Projects\DatabaseToCodeAPI\DatabaseToCodeAPI\DatabaseToCode\DatabaseToCode.API\Properties\PublishProfiles\DatabaseToCode - Zip Deploy.pubxml</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>D:\Github\DatabaseToCodeAPI\DatabaseToCode\DatabaseToCode.API\Properties\PublishProfiles\FolderProfile1.pubxml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DebuggerFlavor>ProjectDebugger</DebuggerFlavor>

@@ -3,6 +3,6 @@ services:
   DatabaseToCode:
     image: DatabaseToCode4846
     volumes:
-      - D:\DockerVolumes\KeyLogger\RecieveAPI\Images:/app/Images
+      - D:\DockerVolumes\DatabaseToCode\Utility:/app/DatabaseToCode.Utility/
     ports:
-      - 8911:80
+      - 5748:80
