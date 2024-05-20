@@ -1,2 +1,2 @@
 cd ".\DatabaseToCode"
-docker build -t DatabaseToCode4846 .
+docker build -t databasetocode4846 .

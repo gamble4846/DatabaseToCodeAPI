@@ -1,7 +1,7 @@
 version: "3.3"
 services:
   DatabaseToCode:
-    image: DatabaseToCode4846
+    image: databasetocode4846
     volumes:
       - D:\DockerVolumes\DatabaseToCode\Utility:/app/DatabaseToCode.Utility/
     ports:
