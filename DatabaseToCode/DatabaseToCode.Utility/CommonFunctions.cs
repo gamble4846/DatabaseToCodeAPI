@@ -109,8 +109,10 @@ namespace DatabaseToCode.Utility
             List<SqlDataTypeCorrespondingLanguagesModel> sqlDataTypeCorrespondingLanguages = new List<SqlDataTypeCorrespondingLanguagesModel>();
             try
             {
-                var FilePath = Path.Combine(ContentRootPath, CustomPathsSection.GetValue<String>("SqlDataTypeCorrespondingLanguagesFile"));
-                string JsonData = System.IO.File.ReadAllText(FilePath);
+                //var FilePath = Path.Combine(ContentRootPath, CustomPathsSection.GetValue<String>("SqlDataTypeCorrespondingLanguagesFile"));
+                //string JsonData = System.IO.File.ReadAllText(FilePath);
+
+                string JsonData = @"[{""SQLDataType"":""varbinary"",""CSharpDataType"":""Byte[]""},{""SQLDataType"":""binary"",""CSharpDataType"":""Byte[]""},{""SQLDataType"":""nvarchar"",""CSharpDataType"":""String""},{""SQLDataType"":""nchar"",""CSharpDataType"":""String""},{""SQLDataType"":""uniqueidentifier"",""CSharpDataType"":""Guid""},{""SQLDataType"":""rowversion"",""CSharpDataType"":""Byte[]""},{""SQLDataType"":""bit"",""CSharpDataType"":""Boolean""},{""SQLDataType"":""tinyint"",""CSharpDataType"":""Byte""},{""SQLDataType"":""smallint"",""CSharpDataType"":""Int16""},{""SQLDataType"":""int"",""CSharpDataType"":""Int32""},{""SQLDataType"":""bigint"",""CSharpDataType"":""Int64""},{""SQLDataType"":""smallmoney"",""CSharpDataType"":""Decimal""},{""SQLDataType"":""money"",""CSharpDataType"":""Decimal""},{""SQLDataType"":""numeric"",""CSharpDataType"":""Decimal""},{""SQLDataType"":""decimal"",""CSharpDataType"":""Decimal""},{""SQLDataType"":""real"",""CSharpDataType"":""Single""},{""SQLDataType"":""float"",""CSharpDataType"":""Double""},{""SQLDataType"":""smalldatetime"",""CSharpDataType"":""DateTime""},{""SQLDataType"":""datetime"",""CSharpDataType"":""DateTime""},{""SQLDataType"":""sql_variant"",""CSharpDataType"":""Object""}]";
                 sqlDataTypeCorrespondingLanguages = JsonConvert.DeserializeObject<List<SqlDataTypeCorrespondingLanguagesModel>>(JsonData);
             }
             catch (Exception) { }
