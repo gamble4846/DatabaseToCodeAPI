@@ -1,0 +1,5 @@
+{
+  "Secret": "1e8d82c6-6e4d-4d93-a6d0-122ed7055046-c2d408b1-2ec5-49e5-824f-00340931759e",
+  "ValidIssuer": "https://localhost:44376/",
+  "ValidAudience": "https://localhost:44376/"
+}
